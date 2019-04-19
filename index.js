@@ -10,9 +10,9 @@ app.set('views', __dirname + '/public');
 
 app.get('/', function(request, response) {
   var env = process.env.APP_ENV;
-  if (env == 'staging') {
+  if (env.includes('staging')) {
     var envName = 'staging'
-  } else if (env == 'production') {
+  } else if (env.includes('prod') ) {
     var envName = 'production'
   } else {
     var envName = 'review app'
