@@ -10,12 +10,12 @@ app.set('views', __dirname + '/public');
 
 app.get('/', function(request, response) {
   var env = process.env.APP_ENV;
-  if (env.includes('staging')) {
-    var envName = 'staging'
-  } else if (env.includes('prod') ) {
-    var envName = 'production'
+  if (env == 'staging') {
+    var envName = 'staging';
+  } else if (env =='production' ) {
+    var envName = 'production';
   } else {
-    var envName = 'review app'
+    var envName = 'review app';
   }
   response.render('index.html', { env: envName});
 });
